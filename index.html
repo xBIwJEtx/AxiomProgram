@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AxiomQuest</title>
+    <title>AxiomProgram | The Prime Polynomial Project</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -24,20 +24,22 @@
         .math-font { font-family: 'Lora', serif; }
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
-        details[open] summary ~ * { animation: fadeIn 0.3s ease-in-out; }
+        
+        /* Animation specifically for immediate children when opened */
+        details[open] > summary ~ * { animation: fadeIn 0.3s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
         .math-highlight { color: #2563eb; font-weight: 600; }
         
-        /* Custom styling for the accordion icon */
-        details summary .icon { transition: transform 0.3s ease; }
-        details[open] summary .icon { transform: rotate(180deg); }
+        /* Custom styling for icons */
+        details > summary .icon { transition: transform 0.3s ease; }
+        details[open] > summary .icon { transform: rotate(180deg); }
     </style>
 </head>
 <body class="max-w-5xl mx-auto p-6 md:p-12">
 
     <header class="border-b-2 border-slate-200 pb-8 mb-10 mt-8">
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">AxiomQuest</h1>
-        <p class="text-xl text-slate-600 font-light">Exploring and Proof Conjectures.</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">AxiomProgram</h1>
+        <p class="text-xl text-slate-600 font-light">Exploring the boundaries and voids of prime-generating functions.</p>
         <div class="mt-6 flex flex-wrap gap-3 items-center text-sm text-slate-500">
             <span class="bg-slate-100 px-3 py-1 rounded-full flex items-center gap-2">
                 <svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
@@ -48,36 +50,22 @@
         </div>
     </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-            <div class="text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">Champion Polynomial</div>
-            <div class="text-2xl font-bold text-slate-800">$f(n) = n^2 - 79n + 1601$</div>
-        </div>
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-            <div class="text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">Longest Prime Sequence</div>
-            <div class="text-2xl font-bold text-blue-600 flex items-center gap-2">
-                80 Consecutive Primes 🏆
-            </div>
-        </div>
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-            <div class="text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">Current Search Space</div>
-            <div class="text-sm font-semibold text-slate-700">$a \le 50, \quad |b| \le 1000, \quad c \le 50000$</div>
-        </div>
-    </div>
-
     <h2 class="text-2xl font-bold mb-8 text-slate-800 border-l-4 border-blue-600 pl-4">
-        Open Conjectures
+        Open Conjectures Directory
     </h2>
 
-    <div class="space-y-10">
+    <div class="space-y-6">
 
-        <section>
-            <h3 class="text-lg font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path></svg>
-                Number Theory
-            </h3>
+        <details class="bg-slate-100 rounded-2xl shadow-sm border border-slate-200 hover:border-slate-300 transition-colors group mb-6">
+            <summary class="p-6 text-xl font-bold text-slate-700 uppercase tracking-widest cursor-pointer flex justify-between items-center select-none">
+                <div class="flex items-center gap-3">
+                    <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path></svg>
+                    Number Theory
+                </div>
+                <svg class="w-6 h-6 text-slate-400 icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
             
-            <div class="space-y-4">
+            <div class="p-6 pt-2 space-y-4 border-t border-slate-200">
                 <details class="bg-white rounded-xl shadow-sm border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer group">
                     <summary class="p-6 text-lg font-semibold flex justify-between items-center select-none">
                         <span class="text-slate-800 group-hover:text-blue-600 transition-colors">I. The Perfect 80 Absolute Limit</span>
@@ -115,15 +103,18 @@
                     </div>
                 </details>
             </div>
-        </section>
+        </details>
 
-        <section>
-            <h3 class="text-lg font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                Algebra & Quadratic Forms
-            </h3>
+        <details class="bg-slate-100 rounded-2xl shadow-sm border border-slate-200 hover:border-slate-300 transition-colors group">
+            <summary class="p-6 text-xl font-bold text-slate-700 uppercase tracking-widest cursor-pointer flex justify-between items-center select-none">
+                <div class="flex items-center gap-3">
+                    <svg class="w-7 h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    Algebra & Quadratic Forms
+                </div>
+                <svg class="w-6 h-6 text-slate-400 icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
 
-            <div class="space-y-4">
+            <div class="p-6 pt-2 space-y-4 border-t border-slate-200">
                 <details class="bg-white rounded-xl shadow-sm border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer group">
                     <summary class="p-6 text-lg font-semibold flex justify-between items-center select-none">
                         <span class="text-slate-800 group-hover:text-blue-600 transition-colors">III. The Discriminant Harmonics</span>
@@ -154,7 +145,7 @@
                     </div>
                 </details>
             </div>
-        </section>
+        </details>
 
     </div>
 
@@ -179,7 +170,7 @@
     </div>
 
     <footer class="mt-12 text-center text-slate-400 text-sm pb-8 font-light">
-        &copy; 2026 The Prime Polynomial Project. Powered by C++ Brute-force.
+        &copy; 2026 AxiomProgram | The Prime Polynomial Project. Powered by C++ Brute-force.
     </footer>
 
 </body>
