@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AxiomQuest</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" 
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+            ]
+        });">
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        .math-font { font-family: 'Lora', serif; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+        .math-highlight { color: #2563eb; font-weight: 600; }
+        
+        /* Custom styling for the accordion icon */
+        details summary .icon { transition: transform 0.3s ease; }
+        details[open] summary .icon { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="max-w-5xl mx-auto p-6 md:p-12">
+
+    <header class="border-b-2 border-slate-200 pb-8 mb-10 mt-8">
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">AxiomQuest</h1>
+        <p class="text-xl text-slate-600 font-light">Exploring and Proof Conjectures.</p>
+        <div class="mt-6 flex flex-wrap gap-3 items-center text-sm text-slate-500">
+            <span class="bg-slate-100 px-3 py-1 rounded-full flex items-center gap-2">
+                <svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
+                Engine Runtime: 21.58s
+            </span>
+            <span class="bg-slate-100 px-3 py-1 rounded-full">513,556,650 permutations tested</span>
+            <span class="bg-slate-100 px-3 py-1 rounded-full">C++ Brute-force Engine</span>
+        </div>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+            <div class="text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">Champion Polynomial</div>
+            <div class="text-2xl font-bold text-slate-800">$f(n) = n^2 - 79n + 1601$</div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+            <div class="text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">Longest Prime Sequence</div>
+            <div class="text-2xl font-bold text-blue-600 flex items-center gap-2">
+                80 Consecutive Primes 🏆
+            </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+            <div class="text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">Current Search Space</div>
+            <div class="text-sm font-semibold text-slate-700">$a \le 50, \quad |b| \le 1000, \quad c \le 50000$</div>
+        </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mb-8 text-slate-800 border-l-4 border-blue-600 pl-4">
+        Open Conjectures
+    </h2>
+
+    <div class="space-y-10">
+
+        <section>
+            <h3 class="text-lg font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path></svg>
+                Number Theory
+            </h3>
+            
+            <div class="space-y-4">
+                <details class="bg-white rounded-xl shadow-sm border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer group">
+                    <summary class="p-6 text-lg font-semibold flex justify-between items-center select-none">
+                        <span class="text-slate-800 group-hover:text-blue-600 transition-colors">I. The Perfect 80 Absolute Limit</span>
+                        <div class="flex items-center gap-4">
+                            <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Open</span>
+                            <svg class="w-5 h-5 text-slate-400 icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </summary>
+                    <div class="p-6 pt-0 text-slate-600 border-t border-slate-100 mt-2">
+                        <p class="mt-4 mb-4 math-font text-lg text-slate-700 bg-slate-50 p-5 rounded-lg border border-slate-100">
+                            "The maximum possible length of a consecutive prime sequence generated by a quadratic polynomial $f(n) = an^2 + bn + c$ (starting from $n=0$) will strictly not exceed <span class="math-highlight">80</span>. Furthermore, this absolute maximum is reserved exclusively for polynomials with a Discriminant ($\Delta = b^2 - 4ac$) of <span class="math-highlight">-163</span>."
+                        </p>
+                        <h4 class="font-bold text-slate-800 mt-6 mb-2 text-sm uppercase tracking-wider">Empirical Evidence</h4>
+                        <p class="text-sm leading-relaxed">After evaluating over 513 million permutations and extending the constant term $c$ up to 50,000, the sequence peaks exactly at 80 with $f(n) = n^2 - 79n + 1601$. No other combination in our dataset breaches this ceiling.</p>
+                        <div class="mt-4 p-4 bg-slate-900 text-emerald-400 font-mono text-sm rounded-lg overflow-x-auto">
+                            [LOG] f(n) = 1n^2 - 79n + 1601 | Count: 80 | Delta: -163
+                        </div>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-xl shadow-sm border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer group">
+                    <summary class="p-6 text-lg font-semibold flex justify-between items-center select-none">
+                        <span class="text-slate-800 group-hover:text-blue-600 transition-colors">II. The Prime Polynomial Void</span>
+                        <div class="flex items-center gap-4">
+                            <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Open</span>
+                            <svg class="w-5 h-5 text-slate-400 icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </summary>
+                    <div class="p-6 pt-0 text-slate-600 border-t border-slate-100 mt-2">
+                        <p class="mt-4 mb-4 math-font text-lg text-slate-700 bg-slate-50 p-5 rounded-lg border border-slate-100">
+                            "Within the system of polynomials generating $\ge 40$ consecutive primes, systematic <span class="math-highlight">'Dead Zones'</span> exist for the leading coefficient $a$. Specifically, values such as $a = 5, 7, 8, 10, \dots$ up to at least $50$ are mathematically incapable of satisfying this threshold."
+                        </p>
+                        <h4 class="font-bold text-slate-800 mt-6 mb-2 text-sm uppercase tracking-wider">Empirical Evidence</h4>
+                        <p class="text-sm leading-relaxed">Despite expanding the search bound to $a \le 50$, the engine only yielded valid polynomials for base values $a \in \{1, 2, 3, 6\}$. The complete absence of $a=5$ and $a=7$ suggests a deeper modular arithmetic constraint that filters out these coefficients globally.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="text-lg font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                Algebra & Quadratic Forms
+            </h3>
+
+            <div class="space-y-4">
+                <details class="bg-white rounded-xl shadow-sm border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer group">
+                    <summary class="p-6 text-lg font-semibold flex justify-between items-center select-none">
+                        <span class="text-slate-800 group-hover:text-blue-600 transition-colors">III. The Discriminant Harmonics</span>
+                        <div class="flex items-center gap-4">
+                            <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Open</span>
+                            <svg class="w-5 h-5 text-slate-400 icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </summary>
+                    <div class="p-6 pt-0 text-slate-600 border-t border-slate-100 mt-2">
+                        <p class="mt-4 mb-4 math-font text-lg text-slate-700 bg-slate-50 p-5 rounded-lg border border-slate-100">
+                            "Any polynomial yielding $\ge 40$ consecutive primes must possess a Discriminant belonging to a specific subset of complex Heegner Numbers (e.g., $-163, -232, -267, -708$) or act as a <span class="math-highlight">Harmonic (multiple)</span> of this subset."
+                        </p>
+                        <h4 class="font-bold text-slate-800 mt-6 mb-2 text-sm uppercase tracking-wider">Empirical Evidence</h4>
+                        <p class="text-sm leading-relaxed">Our data reveals polynomials with $a=4$ ($\Delta = -652$) and $a=9$ ($\Delta = -1467$). Analysis shows these are not independent discoveries, but algebraic shadows formed by substituting $n \to 2n$ and $n \to 3n$ into the base $a=1$ ($\Delta = -163$) polynomial, neatly scaling the discriminant by $k^2$ while dividing the prime count sequence.</p>
+                    </div>
+                </details>
+                
+                <details class="bg-slate-50 opacity-60 rounded-xl shadow-sm border border-slate-200 cursor-pointer group">
+                    <summary class="p-6 text-lg font-semibold flex justify-between items-center select-none">
+                        <span class="text-slate-600 line-through">IV. The Constant Term Constraint</span>
+                        <div class="flex items-center gap-4">
+                            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Solved</span>
+                            <svg class="w-5 h-5 text-slate-400 icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </summary>
+                    <div class="p-6 pt-0 text-slate-600 border-t border-slate-200 mt-2">
+                        <p class="mt-4 text-sm"><strong>Proof:</strong> To guarantee that the sequence generates a prime at $n=0$, the evaluation $f(0) = a(0)^2 + b(0) + c = c$ must hold true. Therefore, the constant $c$ is strictly required to be a prime number. (This has been successfully implemented as an optimization filter in the Engine).</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="mt-16 p-10 bg-slate-900 text-white rounded-2xl text-center shadow-lg relative overflow-hidden">
+        <div class="absolute top-0 right-0 opacity-10">
+            <svg class="w-64 h-64" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13.5h-13L12 6.5z"></path></svg>
+        </div>
+        <h3 class="text-2xl font-bold mb-3 relative z-10">Call for Proofs & Collaboration</h3>
+        <p class="text-slate-400 mb-8 max-w-2xl mx-auto relative z-10 font-light">
+            Can you explain the dead zones in the coefficient $a$? Do you have the computational power to push the boundaries further? Join the discussion or download the source code.
+        </p>
+        <div class="flex justify-center gap-4 relative z-10">
+            <button class="bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                Join the Discussion
+            </button>
+            <button class="bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold py-3 px-6 rounded-lg border border-slate-700 transition-colors flex items-center gap-2">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                View Engine Source
+            </button>
+        </div>
+    </div>
+
+    <footer class="mt-12 text-center text-slate-400 text-sm pb-8 font-light">
+        &copy; 2026 The Prime Polynomial Project. Powered by C++ Brute-force.
+    </footer>
+
+</body>
+</html>
